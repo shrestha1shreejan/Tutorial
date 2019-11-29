@@ -1,0 +1,16 @@
+C:\Users\shree\source\repos\FullStackApplciation\ModelsLibrary\bin\Debug\netcoreapp2.2\ModelsLibrary.deps.json
+C:\Users\shree\source\repos\FullStackApplciation\ModelsLibrary\bin\Debug\netcoreapp2.2\ModelsLibrary.dll
+C:\Users\shree\source\repos\FullStackApplciation\ModelsLibrary\bin\Debug\netcoreapp2.2\ModelsLibrary.pdb
+C:\Users\shree\source\repos\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.csprojAssemblyReference.cache
+C:\Users\shree\source\repos\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.AssemblyInfoInputs.cache
+C:\Users\shree\source\repos\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.AssemblyInfo.cs
+C:\Users\shree\source\repos\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.dll
+C:\Users\shree\source\repos\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.pdb
+D:\PluralSight\TestApplication\FullStackApplciation\ModelsLibrary\bin\Debug\netcoreapp2.2\ModelsLibrary.deps.json
+D:\PluralSight\TestApplication\FullStackApplciation\ModelsLibrary\bin\Debug\netcoreapp2.2\ModelsLibrary.dll
+D:\PluralSight\TestApplication\FullStackApplciation\ModelsLibrary\bin\Debug\netcoreapp2.2\ModelsLibrary.pdb
+D:\PluralSight\TestApplication\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.AssemblyInfoInputs.cache
+D:\PluralSight\TestApplication\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.AssemblyInfo.cs
+D:\PluralSight\TestApplication\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.dll
+D:\PluralSight\TestApplication\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.pdb
+D:\PluralSight\TestApplication\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.csprojAssemblyReference.cache

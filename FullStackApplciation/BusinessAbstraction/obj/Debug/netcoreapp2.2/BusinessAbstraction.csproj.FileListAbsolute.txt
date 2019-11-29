@@ -1,0 +1,11 @@
+D:\PluralSight\TestApplication\FullStackApplciation\BusinessAbstraction\bin\Debug\netcoreapp2.2\BusinessAbstraction.deps.json
+D:\PluralSight\TestApplication\FullStackApplciation\BusinessAbstraction\bin\Debug\netcoreapp2.2\BusinessAbstraction.dll
+D:\PluralSight\TestApplication\FullStackApplciation\BusinessAbstraction\bin\Debug\netcoreapp2.2\BusinessAbstraction.pdb
+D:\PluralSight\TestApplication\FullStackApplciation\BusinessAbstraction\bin\Debug\netcoreapp2.2\ModelsLibrary.dll
+D:\PluralSight\TestApplication\FullStackApplciation\BusinessAbstraction\bin\Debug\netcoreapp2.2\ModelsLibrary.pdb
+D:\PluralSight\TestApplication\FullStackApplciation\BusinessAbstraction\obj\Debug\netcoreapp2.2\BusinessAbstraction.csprojAssemblyReference.cache
+D:\PluralSight\TestApplication\FullStackApplciation\BusinessAbstraction\obj\Debug\netcoreapp2.2\BusinessAbstraction.AssemblyInfoInputs.cache
+D:\PluralSight\TestApplication\FullStackApplciation\BusinessAbstraction\obj\Debug\netcoreapp2.2\BusinessAbstraction.AssemblyInfo.cs
+D:\PluralSight\TestApplication\FullStackApplciation\BusinessAbstraction\obj\Debug\netcoreapp2.2\BusinessAbstraction.csproj.CopyComplete
+D:\PluralSight\TestApplication\FullStackApplciation\BusinessAbstraction\obj\Debug\netcoreapp2.2\BusinessAbstraction.dll
+D:\PluralSight\TestApplication\FullStackApplciation\BusinessAbstraction\obj\Debug\netcoreapp2.2\BusinessAbstraction.pdb
