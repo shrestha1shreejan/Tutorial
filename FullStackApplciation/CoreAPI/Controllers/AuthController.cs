@@ -76,7 +76,7 @@ namespace CoreAPI.Controllers
 
         [HttpPost("login")]
         public async Task<IActionResult> LoginUser(UserForLoginDto userForLoginDto)
-        {
+        {           
             var user = await _repository.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
 
             if (user == null)

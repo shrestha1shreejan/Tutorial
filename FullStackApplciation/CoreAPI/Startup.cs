@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using CoreAPI.Helpers;
 using DataLibrary;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -15,6 +19,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using ModelsLibrary;
+using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
 
 namespace CoreAPI
 {
@@ -68,6 +73,24 @@ namespace CoreAPI
             }
             else
             {
+                // Global exception handler 
+                app.UseExceptionHandler(builder => {
+                    builder.Run(async context =>
+                    {
+                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+
+                        var error = context.Features.Get<IExceptionHandlerFeature>();
+                        if (error != null)
+                        {
+                            // TODO: Modify the response with our own extension method
+                            // Added extension method for this
+                            context.Response.AddApplicationError(error.Error.Message);// will get rid of misleading cors error
+                            await context.Response.WriteAsync(error.Error.Message);
+                            
+                        }
+                    });
+                });
+
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
