@@ -3,7 +3,9 @@ using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Options;
 using ModelsLibrary;
 using ModelsLibrary.DataModels;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -34,10 +36,20 @@ namespace DataLibrary
         /// <returns></returns>
         public async Task<IEnumerable<Person>> GetUsers()
         {           
-            var query = "SELECT * FROM c";
-            var iterator = _container.GetItemQueryIterator<Person>(query);
-            var data = await iterator.ReadNextAsync();
-            return data;
+            //var query = "SELECT * FROM c";
+            //var iterator = _container.GetItemQueryIterator<Person>(query);
+            //var data = await iterator.ReadNextAsync();
+            //return data;
+
+            var query = this._container.GetItemQueryIterator<Person>(new QueryDefinition("SELECT * FROM c"));
+            List<Person> results = new List<Person>();
+            while (query.HasMoreResults)
+            {
+                var response = await query.ReadNextAsync();                
+                results.AddRange(response.ToList());
+            }
+
+            return results;
         }
 
         /// <summary>
@@ -48,8 +60,18 @@ namespace DataLibrary
         /// <returns></returns>
         public async Task<Person> GetPersonById(string id)
         {
-            ItemResponse<Person> response = await _container.ReadItemAsync<Person>(id,new PartitionKey(id));
-            return response.Resource;
+            // TODO: handle the case where user is not found
+            try
+            {
+                ItemResponse<Person> response = await _container.ReadItemAsync<Person>(id, new PartitionKey(id));
+                return response.Resource;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+           
         }
 
 

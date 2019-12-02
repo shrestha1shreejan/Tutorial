@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using AutoMapper;
 using DataLayerAbstraction;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ModelsLibrary.DataModels;
+using ModelsLibrary.DTOS;
 
 namespace CoreAPI.Controllers
 {
@@ -16,18 +18,25 @@ namespace CoreAPI.Controllers
     public class DataController : ControllerBase
     {
         private readonly ICosmosManager _cosmosManager;
+        private readonly IMapper _mapper;
 
-        public DataController(ICosmosManager cosmosManager)
+        public DataController(ICosmosManager cosmosManager, IMapper mapper)
         {
             _cosmosManager = cosmosManager;
+            _mapper = mapper;
         }
+
 
         // GET api/values
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             var users = await _cosmosManager.GetUsers();
-            return Ok(users) ;
+
+            // var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
+            var usersToReturn = Helpers.HelperMapper.MapUserToUserForListDto(users);
+
+            return Ok(usersToReturn) ;
         }
 
         // GET api/values/5
@@ -36,7 +45,15 @@ namespace CoreAPI.Controllers
         public async Task<IActionResult> Get(string id)
         {
             var user = await _cosmosManager.GetPersonById(id);
-            return Ok(user);
+            if (user == null)
+            {
+                return BadRequest("User with such Id doesn't exist");
+            }
+
+            // var userToReturn = _mapper.Map<UserForDetailDto>(user);
+            var userToReturn = Helpers.HelperMapper.MapUserToUserForDetailDto(user);
+
+            return Ok(userToReturn);
         }
 
         // POST api/values
@@ -62,6 +79,8 @@ namespace CoreAPI.Controllers
             }
             return BadRequest("Unable to update the person");
         }
+
+
        
     }
 }

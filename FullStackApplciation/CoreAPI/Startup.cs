@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Text;
-using System.Threading.Tasks;
+using AutoMapper;
 using CoreAPI.Helpers;
 using DataLibrary;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,15 +8,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using ModelsLibrary;
-using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
 
 namespace CoreAPI
 {
@@ -35,13 +28,20 @@ namespace CoreAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // to get rid of self refrencing error thrown
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                //.AddJsonOptions(opt => {
+                //    opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                //});
 
             ///
             services.Configure<CosmosDbConfigurationManager>(Configuration.GetSection("CosmosDBConfiguration"));
 
             //DI
-            services.AddDataLibrary();            
+            services.AddDataLibrary();
+
+            // Automapper
+            services.AddAutoMapper(typeof(CosmosManager).Assembly);
 
             // cors
             services.AddCors( c => {
@@ -62,6 +62,7 @@ namespace CoreAPI
                         ValidateAudience = false
                     };               
                 });
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
