@@ -1,16 +1,32 @@
+import { Observable } from 'rxjs';
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { User } from '../_models/User';
+
+// defining authoriaztion header to add to the api request
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     Authorization : 'Bearer ' + localStorage.getItem('token')
+//   })
+// }
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  baseUrl = 'https://localhost:44352/data/1c3e8cfb-5fb5-ec61-78f6-03541755b599';
+  baseUrl = environment.dataUrl;
 
   constructor(private httpClient: HttpClient) { }
 
-  getData() {
-    return this.httpClient.get(this.baseUrl);
+  getUsers(): Observable<User[]> {
+    // return this.httpClient.get<User[]>(this.baseUrl + 'data', httpOptions);
+    return this.httpClient.get<User[]>(this.baseUrl + 'data');
+  }
+
+  getUser(id: string): Observable<User> {
+    // return this.httpClient.get<User>(this.baseUrl + 'data/' + id, httpOptions);
+    return this.httpClient.get<User>(this.baseUrl + 'data' + id);
   }
 
 }

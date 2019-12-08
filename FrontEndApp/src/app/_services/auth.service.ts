@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -8,7 +9,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
 
-  baseurl = 'https://localhost:44352/auth/';
+  baseurl = environment.dataUrl + 'auth/';
   helper = new JwtHelperService();
   decodedToken: any;
 

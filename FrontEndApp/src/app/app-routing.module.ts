@@ -1,6 +1,6 @@
 import { AuthGuard } from './_guards/auth.guard';
 import { ListComponent } from './list/list.component';
-import { MemeberListComponent } from './memeber-list/memeber-list.component';
+import { MemeberListComponent } from './members/memeber-list/memeber-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
