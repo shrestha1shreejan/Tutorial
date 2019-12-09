@@ -1,14 +1,17 @@
+import { MemberListResolver } from './_resolver/member-list.resolver';
+import { MemberDetailResolver } from './_resolver/member-detail.resolver';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { DataService } from './_services/data.service';
 import { AuthService } from './_services/auth.service';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AppRoutingModule } from './app-routing.module';
-
+import { NgxGalleryModule } from 'ngx-gallery';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
@@ -33,13 +36,16 @@ export function tokenGetter() {
       MemeberListComponent,
       ListComponent,
       MessagesComponent,
-      MemberCardComponent
+      MemberCardComponent,
+      MemberDetailComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       FormsModule,
       BsDropdownModule.forRoot(),
+      TabsModule.forRoot(),
+      NgxGalleryModule,
       JwtModule.forRoot({
          config: {
             tokenGetter,
@@ -52,6 +58,8 @@ export function tokenGetter() {
    providers: [
       AuthService,
       DataService,
+      MemberDetailResolver,
+      MemberListResolver,
       ErrorInterceptorProvider
    ],
    bootstrap: [

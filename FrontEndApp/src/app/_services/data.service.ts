@@ -26,7 +26,7 @@ export class DataService {
 
   getUser(id: string): Observable<User> {
     // return this.httpClient.get<User>(this.baseUrl + 'data/' + id, httpOptions);
-    return this.httpClient.get<User>(this.baseUrl + 'data' + id);
+    return this.httpClient.get<User>(this.baseUrl + 'data/' + id);
   }
 
 }

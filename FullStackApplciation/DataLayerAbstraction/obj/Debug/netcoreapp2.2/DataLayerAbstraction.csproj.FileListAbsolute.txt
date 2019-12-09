@@ -20,3 +20,14 @@ D:\PluralSight\TestApplication\FullStackApplciation\DataLayerAbstraction\obj\Deb
 D:\PluralSight\TestApplication\FullStackApplciation\DataLayerAbstraction\obj\Debug\netcoreapp2.2\DataLayerAbstraction.csproj.CopyComplete
 D:\PluralSight\TestApplication\FullStackApplciation\DataLayerAbstraction\obj\Debug\netcoreapp2.2\DataLayerAbstraction.dll
 D:\PluralSight\TestApplication\FullStackApplciation\DataLayerAbstraction\obj\Debug\netcoreapp2.2\DataLayerAbstraction.pdb
+D:\Projects\DatingApp\FullStackApplciation\DataLayerAbstraction\bin\Debug\netcoreapp2.2\DataLayerAbstraction.deps.json
+D:\Projects\DatingApp\FullStackApplciation\DataLayerAbstraction\bin\Debug\netcoreapp2.2\DataLayerAbstraction.dll
+D:\Projects\DatingApp\FullStackApplciation\DataLayerAbstraction\bin\Debug\netcoreapp2.2\DataLayerAbstraction.pdb
+D:\Projects\DatingApp\FullStackApplciation\DataLayerAbstraction\bin\Debug\netcoreapp2.2\ModelsLibrary.dll
+D:\Projects\DatingApp\FullStackApplciation\DataLayerAbstraction\bin\Debug\netcoreapp2.2\ModelsLibrary.pdb
+D:\Projects\DatingApp\FullStackApplciation\DataLayerAbstraction\obj\Debug\netcoreapp2.2\DataLayerAbstraction.csprojAssemblyReference.cache
+D:\Projects\DatingApp\FullStackApplciation\DataLayerAbstraction\obj\Debug\netcoreapp2.2\DataLayerAbstraction.AssemblyInfoInputs.cache
+D:\Projects\DatingApp\FullStackApplciation\DataLayerAbstraction\obj\Debug\netcoreapp2.2\DataLayerAbstraction.AssemblyInfo.cs
+D:\Projects\DatingApp\FullStackApplciation\DataLayerAbstraction\obj\Debug\netcoreapp2.2\DataLayerAbstraction.csproj.CopyComplete
+D:\Projects\DatingApp\FullStackApplciation\DataLayerAbstraction\obj\Debug\netcoreapp2.2\DataLayerAbstraction.dll
+D:\Projects\DatingApp\FullStackApplciation\DataLayerAbstraction\obj\Debug\netcoreapp2.2\DataLayerAbstraction.pdb

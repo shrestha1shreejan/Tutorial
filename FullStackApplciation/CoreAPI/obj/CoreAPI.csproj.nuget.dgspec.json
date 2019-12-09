@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PluralSight\\TestApplication\\FullStackApplciation\\CoreAPI\\CoreAPI.csproj": {}
+    "D:\\Projects\\DatingApp\\FullStackApplciation\\CoreAPI\\CoreAPI.csproj": {}
   },
   "projects": {
-    "D:\\PluralSight\\TestApplication\\FullStackApplciation\\CoreAPI\\CoreAPI.csproj": {
+    "D:\\Projects\\DatingApp\\FullStackApplciation\\CoreAPI\\CoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\CoreAPI\\CoreAPI.csproj",
+        "projectUniqueName": "D:\\Projects\\DatingApp\\FullStackApplciation\\CoreAPI\\CoreAPI.csproj",
         "projectName": "CoreAPI",
-        "projectPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\CoreAPI\\CoreAPI.csproj",
+        "projectPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\CoreAPI\\CoreAPI.csproj",
         "packagesPath": "C:\\Users\\shree\\.nuget\\packages\\",
-        "outputPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\CoreAPI\\obj\\",
+        "outputPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\CoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,11 +30,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLibrary\\DataLibrary.csproj": {
-                "projectPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLibrary\\DataLibrary.csproj"
+              "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLibrary\\DataLibrary.csproj": {
+                "projectPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLibrary\\DataLibrary.csproj"
               },
-              "D:\\PluralSight\\TestApplication\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj": {
-                "projectPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj"
+              "D:\\Projects\\DatingApp\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj": {
+                "projectPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj"
               }
             }
           }
@@ -84,18 +84,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLayerAbstraction\\DataLayerAbstraction.csproj": {
+    "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLayerAbstraction\\DataLayerAbstraction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLayerAbstraction\\DataLayerAbstraction.csproj",
+        "projectUniqueName": "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLayerAbstraction\\DataLayerAbstraction.csproj",
         "projectName": "DataLayerAbstraction",
-        "projectPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLayerAbstraction\\DataLayerAbstraction.csproj",
+        "projectPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLayerAbstraction\\DataLayerAbstraction.csproj",
         "packagesPath": "C:\\Users\\shree\\.nuget\\packages\\",
-        "outputPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLayerAbstraction\\obj\\",
+        "outputPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLayerAbstraction\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -114,8 +114,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\PluralSight\\TestApplication\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj": {
-                "projectPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj"
+              "D:\\Projects\\DatingApp\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj": {
+                "projectPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj"
               }
             }
           }
@@ -146,18 +146,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLibrary\\DataLibrary.csproj": {
+    "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLibrary\\DataLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLibrary\\DataLibrary.csproj",
+        "projectUniqueName": "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLibrary\\DataLibrary.csproj",
         "projectName": "DataLibrary",
-        "projectPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLibrary\\DataLibrary.csproj",
+        "projectPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLibrary\\DataLibrary.csproj",
         "packagesPath": "C:\\Users\\shree\\.nuget\\packages\\",
-        "outputPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLibrary\\obj\\",
+        "outputPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -176,11 +176,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLayerAbstraction\\DataLayerAbstraction.csproj": {
-                "projectPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\DataLayerAbstraction\\DataLayerAbstraction.csproj"
+              "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLayerAbstraction\\DataLayerAbstraction.csproj": {
+                "projectPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\DataLayerAbstraction\\DataLayerAbstraction.csproj"
               },
-              "D:\\PluralSight\\TestApplication\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj": {
-                "projectPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj"
+              "D:\\Projects\\DatingApp\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj": {
+                "projectPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj"
               }
             }
           }
@@ -219,18 +219,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\PluralSight\\TestApplication\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj": {
+    "D:\\Projects\\DatingApp\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj",
+        "projectUniqueName": "D:\\Projects\\DatingApp\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj",
         "projectName": "ModelsLibrary",
-        "projectPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj",
+        "projectPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\ModelsLibrary\\ModelsLibrary.csproj",
         "packagesPath": "C:\\Users\\shree\\.nuget\\packages\\",
-        "outputPath": "D:\\PluralSight\\TestApplication\\FullStackApplciation\\ModelsLibrary\\obj\\",
+        "outputPath": "D:\\Projects\\DatingApp\\FullStackApplciation\\ModelsLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -281,7 +281,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
