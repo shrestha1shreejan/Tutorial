@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { User } from '../_models/User';
 
 // defining authoriaztion header to add to the api request
@@ -27,6 +27,10 @@ export class DataService {
   getUser(id: string): Observable<User> {
     // return this.httpClient.get<User>(this.baseUrl + 'data/' + id, httpOptions);
     return this.httpClient.get<User>(this.baseUrl + 'data/' + id);
+  }
+
+  updateUser(id: string, user: User) {
+    return this.httpClient.put(this.baseUrl + 'data/' + id, user);
   }
 
 }

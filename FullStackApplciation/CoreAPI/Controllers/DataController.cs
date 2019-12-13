@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataLayerAbstraction;
@@ -70,12 +71,19 @@ namespace CoreAPI.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(string id, [FromBody] Person person)
+        public async Task<IActionResult> Put(string id, [FromBody] UserForUpdateDtos user)
         {
+            // check if the user is authorized
+            if (id != User.FindFirst(ClaimTypes.NameIdentifier).Value)
+            {
+                return Unauthorized();
+            }
+            var currentPerson = await _cosmosManager.GetPersonById(id);
+            var person = Helpers.HelperMapper.MapUserToUserForUpdateDto(currentPerson, user);
             var response = await _cosmosManager.UpdatePersonsData(id, person);
             if (response == HttpStatusCode.OK)
             {
-                return Ok();
+                return NoContent();
             }
             return BadRequest("Unable to update the person");
         }

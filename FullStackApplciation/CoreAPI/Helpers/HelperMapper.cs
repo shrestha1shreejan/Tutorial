@@ -36,6 +36,17 @@ namespace CoreAPI.Helpers
         }
 
 
+        public static Person MapUserToUserForUpdateDto(Person person, UserForUpdateDtos updatedUser)
+        {
+            person.City = updatedUser.City;
+            person.Country = updatedUser.Country;
+            person.Interests = updatedUser.Interests;
+            person.Introduction = updatedUser.Introduction;
+            person.LookingFor = updatedUser.LookingFor;
+
+            return person;
+        }
+
         public static List<UserForListDto> MapUserToUserForListDto(IEnumerable<Person> persons)
         {
             List<UserForListDto> usersToReturn = new List<UserForListDto>();
