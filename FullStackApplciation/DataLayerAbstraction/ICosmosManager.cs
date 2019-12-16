@@ -12,6 +12,7 @@ namespace DataLayerAbstraction
         Task<HttpStatusCode> AddPersonData(Person person);
         Task<HttpStatusCode> UpdatePersonsData(string id, Person person);
         Task<bool> PersonExists(string username);
-        Task<Person> GetPersonByUsername(string username);
+        Task<Person> GetPersonByUsername(string username);        
+        Task<Photo> GetPhotoById(string userId, int photoId);
     }
 }

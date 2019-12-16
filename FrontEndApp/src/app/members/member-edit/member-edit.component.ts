@@ -3,7 +3,7 @@ import { DataService } from './../../_services/data.service';
 import { AlertifyService } from './../../_services/alertify.service';
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { User } from 'src/app/_models/User';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Event } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -16,6 +16,7 @@ export class MemberEditComponent implements OnInit {
   // accessing the form using the view child decorator
   @ViewChild('editForm') editForm: NgForm;
   user: User;
+  photoUrl: string;
 
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
@@ -31,6 +32,9 @@ export class MemberEditComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.user = data.user;
     });
+
+    this.authService.currrentPhotoUrl.subscribe(p => this.photoUrl = p);
+
   }
 
 
@@ -44,6 +48,12 @@ export class MemberEditComponent implements OnInit {
     }, error => {
       this.alertify.error(error);
     });
+  }
+
+
+  // update main photo
+  updateMainPhoto(photoUrl) {
+    this.user.photoUrl = photoUrl;
   }
 }
 

@@ -13,6 +13,7 @@ namespace DataLibrary
         {
            
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IPhotoRepository, PhotoRepository>();
             services.AddSingleton<ICosmosManager>(InitializeCosmosClientAsync().GetAwaiter().GetResult());
             return services;
         }

@@ -1,3 +1,4 @@
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { AuthGuard } from './_guards/auth.guard';
 import { MemberEditResolver } from './_resolver/member-edit.resolver';
@@ -24,6 +25,7 @@ import { MemeberListComponent } from './members/memeber-list/memeber-list.compon
 import { ListComponent } from './list/list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 
@@ -41,6 +43,7 @@ export function tokenGetter() {
       ListComponent,
       MessagesComponent,
       MemberCardComponent,
+      PhotoEditorComponent,
       MemberDetailComponent,
       MemberEditComponent
    ],
@@ -51,6 +54,7 @@ export function tokenGetter() {
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
       NgxGalleryModule,
+      FileUploadModule,
       JwtModule.forRoot({
          config: {
             tokenGetter,

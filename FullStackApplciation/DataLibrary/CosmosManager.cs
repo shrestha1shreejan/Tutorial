@@ -140,5 +140,21 @@ namespace DataLibrary
             return false;
         }
 
+
+        public async Task<Photo> GetPhotoById(string userId, int photoId)
+        {            
+            var query = $"SELECT c.Photos FROM c WHERE c.id =  '{userId}' ";
+            var iterator = _container.GetItemQueryIterator<Photo>(query);
+            List<Photo> photos = new List<Photo>();
+            while (iterator.HasMoreResults)
+            {
+                var response = await iterator.ReadNextAsync();
+                photos.AddRange(response.ToList());
+            }
+
+            var p = photos.FirstOrDefault(x => x.Id == photoId);
+            return p;
+        }
+
     }
 } 

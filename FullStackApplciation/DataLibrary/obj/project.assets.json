@@ -2,7 +2,31 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "Microsoft.Azure.Cosmos/3.4.1": {
+      "CloudinaryDotNet/1.9.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
+        }
+      },
+      "Microsoft.Azure.Cosmos/3.5.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "10.0.2",
@@ -461,6 +485,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "Microsoft.Extensions.Options": "2.2.0",
           "ModelsLibrary": "1.0.0"
         },
         "compile": {
@@ -474,6 +499,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Newtonsoft.Json": "12.0.3"
         },
         "compile": {
@@ -486,10 +512,45 @@
     }
   },
   "libraries": {
-    "Microsoft.Azure.Cosmos/3.4.1": {
-      "sha512": "y2tyHQz5MHTieHSz4if16XTjdYh2tCESSgUJ4RqATtHvfJzh5ZG2gIKiocGIhiC1otT36aKrRwWH3paN2Vd0gQ==",
+    "CloudinaryDotNet/1.9.1": {
+      "sha512": "E5nJnmmBiKcbnhNhjWai5STm+8lOgSwlbCiHJ10IOnFN4dkIyhi8IyswT5bESEPo2dDG7Jt/0JESoQVUPz4lIg==",
       "type": "package",
-      "path": "microsoft.azure.cosmos/3.4.1",
+      "path": "cloudinarydotnet/1.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cloudinarydotnet.1.9.1.nupkg.sha512",
+        "cloudinarydotnet.nuspec",
+        "lib/net45/CloudinaryDotNet.dll",
+        "lib/net45/CloudinaryDotNet.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "lib/net45/System.Text.Encodings.Web.dll",
+        "lib/netcore/CloudinaryDotNet.deps.json",
+        "lib/netcore/CloudinaryDotNet.dll",
+        "lib/netcore/CloudinaryDotNet.xml",
+        "lib/netstandard1.3/CloudinaryDotNet.deps.json",
+        "lib/netstandard1.3/CloudinaryDotNet.dll",
+        "lib/netstandard1.3/CloudinaryDotNet.xml"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/2.2.0": {
+      "sha512": "ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Cosmos/3.5.1": {
+      "sha512": "XwYP+Lp65tKNLWnxh2SH8Vg+7OC5GGJKIQvT0qH3kN7K3TUgnOY+s1gvqbCcQcl+69FBsCkhIU2FZjtk4lFPxg==",
+      "type": "package",
+      "path": "microsoft.azure.cosmos/3.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -499,7 +560,7 @@
         "lib/netstandard2.0/Microsoft.Azure.Cosmos.Core.dll",
         "lib/netstandard2.0/Microsoft.Azure.Cosmos.Direct.dll",
         "lib/netstandard2.0/Microsoft.Azure.Cosmos.Serialization.HybridRow.dll",
-        "microsoft.azure.cosmos.3.4.1.nupkg.sha512",
+        "microsoft.azure.cosmos.3.5.1.nupkg.sha512",
         "microsoft.azure.cosmos.nuspec",
         "ref/netstandard2.0/Microsoft.Azure.Cosmos.Client.dll",
         "runtimes/win-x64/native/Cosmos.CRTCompat.dll",
@@ -1571,8 +1632,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "CloudinaryDotNet >= 1.9.1",
       "DataLayerAbstraction >= 1.0.0",
-      "Microsoft.Azure.Cosmos >= 3.4.1",
+      "Microsoft.Azure.Cosmos >= 3.5.1",
       "Microsoft.Extensions.Options >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "ModelsLibrary >= 1.0.0"
@@ -1626,9 +1688,13 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "CloudinaryDotNet": {
+            "target": "Package",
+            "version": "[1.9.1, )"
+          },
           "Microsoft.Azure.Cosmos": {
             "target": "Package",
-            "version": "[3.4.1, )"
+            "version": "[3.5.1, )"
           },
           "Microsoft.Extensions.Options": {
             "target": "Package",
@@ -1654,5 +1720,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "CloudinaryDotNet 1.9.1 depends on Newtonsoft.Json (>= 12.0.0) but Newtonsoft.Json 12.0.0 was not found. An approximate best match of Newtonsoft.Json 12.0.1 was resolved.",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    }
+  ]
 }

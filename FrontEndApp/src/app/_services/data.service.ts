@@ -33,4 +33,12 @@ export class DataService {
     return this.httpClient.put(this.baseUrl + 'data/' + id, user);
   }
 
+  setMainPhoto(userId: string, photoId: number) {
+    return this.httpClient.post(this.baseUrl + 'data/' + userId + '/photos/' + photoId + '/setMain', {});
+  }
+
+  deletePhoto(userId: string, photoId: number) {
+    return this.httpClient.delete(this.baseUrl + 'data/' + userId + '/photos/' + photoId);
+  }
+
 }

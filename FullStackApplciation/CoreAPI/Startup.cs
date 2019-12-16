@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using ModelsLibrary;
+using ModelsLibrary.DataModels;
 
 namespace CoreAPI
 {
@@ -49,6 +50,9 @@ namespace CoreAPI
                     options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                 });
             });
+
+            // adding cloudinary settings
+            services.Configure<CloudinarySettings>(Configuration.GetSection("ClodunarySettings"));
 
             // security
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

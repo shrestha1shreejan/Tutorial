@@ -51,6 +51,7 @@ D:\PluralSight\TestApplication\FullStackApplciation\CoreAPI\obj\Debug\netcoreapp
 D:\Projects\DatingApp\FullStackApplciation\CoreAPI\bin\Debug\netcoreapp2.2\Microsoft.Azure.Cosmos.ServiceInterop.dll
 D:\Projects\DatingApp\FullStackApplciation\CoreAPI\bin\Debug\netcoreapp2.2\Cosmos.CRTCompat.dll
 D:\Projects\DatingApp\FullStackApplciation\CoreAPI\bin\Debug\netcoreapp2.2\appsettings.Development.json
+D:\Projects\DatingApp\FullStackApplciation\CoreAPI\bin\Debug\netcoreapp2.2\appsettings.json
 D:\Projects\DatingApp\FullStackApplciation\CoreAPI\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
 D:\Projects\DatingApp\FullStackApplciation\CoreAPI\bin\Debug\netcoreapp2.2\CoreAPI.deps.json
 D:\Projects\DatingApp\FullStackApplciation\CoreAPI\bin\Debug\netcoreapp2.2\CoreAPI.runtimeconfig.json
@@ -72,4 +73,3 @@ D:\Projects\DatingApp\FullStackApplciation\CoreAPI\obj\Debug\netcoreapp2.2\CoreA
 D:\Projects\DatingApp\FullStackApplciation\CoreAPI\obj\Debug\netcoreapp2.2\CoreAPI.csproj.CopyComplete
 D:\Projects\DatingApp\FullStackApplciation\CoreAPI\obj\Debug\netcoreapp2.2\CoreAPI.dll
 D:\Projects\DatingApp\FullStackApplciation\CoreAPI\obj\Debug\netcoreapp2.2\CoreAPI.pdb
-D:\Projects\DatingApp\FullStackApplciation\CoreAPI\bin\Debug\netcoreapp2.2\appsettings.json

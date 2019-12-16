@@ -45,6 +45,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -110,9 +114,13 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.9.1, )"
+            },
             "Microsoft.Azure.Cosmos": {
               "target": "Package",
-              "version": "[3.4.1, )"
+              "version": "[3.5.1, )"
             },
             "Microsoft.Extensions.Options": {
               "target": "Package",
@@ -176,6 +184,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
