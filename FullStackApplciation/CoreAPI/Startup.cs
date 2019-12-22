@@ -54,6 +54,9 @@ namespace CoreAPI
             // adding cloudinary settings
             services.Configure<CloudinarySettings>(Configuration.GetSection("ClodunarySettings"));
 
+            // Adding the filter to the service
+            services.AddScoped<LogPersonsActivity>();
+
             // security
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {

@@ -27,7 +27,7 @@ import { ListComponent } from './list/list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { FileUploadModule } from 'ng2-file-upload';
-
+import { TimeAgoPipe } from 'time-ago-pipe';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -37,6 +37,7 @@ export function tokenGetter() {
    declarations: [
       AppComponent,
       NavComponent,
+      TimeAgoPipe,
       RegisterComponent,
       HomeComponent,
       MemeberListComponent,

@@ -5,6 +5,7 @@ using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
+using CoreAPI.Helpers;
 using DataLayerAbstraction;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,7 @@ using ModelsLibrary.DTOS;
 
 namespace CoreAPI.Controllers
 {
+    [ServiceFilter(typeof(LogPersonsActivity))]
     [Authorize]
     [Route("Data")]
     [ApiController]
