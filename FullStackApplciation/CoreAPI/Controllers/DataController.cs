@@ -42,7 +42,7 @@ namespace CoreAPI.Controllers
 
         // GET api/values/5
         [AllowAnonymous]
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetUser")]
         public async Task<IActionResult> Get(string id)
         {
             var user = await _cosmosManager.GetPersonById(id);

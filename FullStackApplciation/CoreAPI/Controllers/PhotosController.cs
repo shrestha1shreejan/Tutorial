@@ -62,7 +62,7 @@ namespace CoreAPI.Controllers
             {
                 return Unauthorized();
             }
-
+            
             var userFromRepo = await _repo.GetPersonById(userId);
 
             var file = photoForCreationDto.File;
@@ -72,14 +72,26 @@ namespace CoreAPI.Controllers
             var photo = Helpers.HelperMapper.MapPhotoForCreationDtoToPhoto(photoForCreation);
 
             // check if there is no main Photo for the person
-            if (!userFromRepo.Photos.Any(p => p.IsMain))
+            if (userFromRepo.Photos != null)
             {
+                if (!userFromRepo.Photos.Any(p => p.IsMain))
+                {
+                    photo.IsMain = true;
+                }
+                var currentPhototCount = userFromRepo.Photos.Count();
+                photo.Id = userFromRepo.Photos.Last().Id + 1;
+            } 
+            else
+            {
+                photo.Id = 0;
                 photo.IsMain = true;
             }
 
-            var currentPhototCount = userFromRepo.Photos.Count();
-            photo.Id = userFromRepo.Photos.Last().Id + 1;
-
+            if (userFromRepo.Photos == null)
+            {
+                userFromRepo.Photos = new List<Photo>();
+            }
+            
             userFromRepo.Photos.Add(photo);
 
             var response = await _repo.UpdatePersonsData(userId, userFromRepo);

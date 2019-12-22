@@ -57,11 +57,8 @@ namespace CoreAPI.Controllers
                 return BadRequest("Username already exists");
             }            
 
-            var person = new Person
-            {
-                Id = Guid.NewGuid(),
-                Username = username                
-            };
+            var person = Helpers.HelperMapper.MapPersonForRegistrationDtoToPerson(userForRegisterDto);
+            person.Id = Guid.NewGuid();
 
             var user = await _repository.Register(person, userForRegisterDto.Password);
 
@@ -70,7 +67,9 @@ namespace CoreAPI.Controllers
                 return BadRequest("Failed to register user");
             }
 
-            return Ok(user);
+            var userToReturn = Helpers.HelperMapper.MapPersonToUserForCreatedDto(user);
+
+            return CreatedAtRoute("GetUser", new { controller = "Data", id = user.Id.ToString()}, userToReturn);
         }
 
 

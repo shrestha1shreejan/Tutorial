@@ -52,8 +52,15 @@ export class PhotoEditorComponent implements OnInit {
           dateAdded: res.dateAdded,
           isMain: res.isMain
         };
-
+        // if the photos are null at start initilizing it to empty array
+        this.photos = this.photos || [];
         this.photos.push(photo);
+
+        if (photo.isMain) {
+          this.authService.changeMemberPhoto(photo.url);
+          this.authService.currentUser.photoUrl = photo.url;
+          localStorage.setItem('user', JSON.stringify(this.authService.currentUser));
+        }
       }
     }
   }
@@ -74,7 +81,7 @@ export class PhotoEditorComponent implements OnInit {
       this.currentMain.isMain = false;
       photo.isMain = true;
       // this.getMemberPhotoChange.emit(photo.url);
-      this.authService.changeMemberPhoto(photo.url)
+      this.authService.changeMemberPhoto(photo.url);
       this.authService.currentUser.photoUrl = photo.url;
       localStorage.setItem('user', JSON.stringify(this.authService.currentUser));
       // this.alertify.success('Main photo updated successfully');
