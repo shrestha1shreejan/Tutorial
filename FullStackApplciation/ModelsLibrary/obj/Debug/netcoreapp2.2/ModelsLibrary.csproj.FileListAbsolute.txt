@@ -17,8 +17,8 @@ D:\PluralSight\TestApplication\FullStackApplciation\ModelsLibrary\obj\Debug\netc
 D:\Projects\DatingApp\FullStackApplciation\ModelsLibrary\bin\Debug\netcoreapp2.2\ModelsLibrary.deps.json
 D:\Projects\DatingApp\FullStackApplciation\ModelsLibrary\bin\Debug\netcoreapp2.2\ModelsLibrary.dll
 D:\Projects\DatingApp\FullStackApplciation\ModelsLibrary\bin\Debug\netcoreapp2.2\ModelsLibrary.pdb
-D:\Projects\DatingApp\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.csprojAssemblyReference.cache
 D:\Projects\DatingApp\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.AssemblyInfoInputs.cache
 D:\Projects\DatingApp\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.AssemblyInfo.cs
 D:\Projects\DatingApp\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.dll
 D:\Projects\DatingApp\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.pdb
+D:\Projects\DatingApp\FullStackApplciation\ModelsLibrary\obj\Debug\netcoreapp2.2\ModelsLibrary.csprojAssemblyReference.cache

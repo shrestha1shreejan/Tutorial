@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ModelsLibrary.DataModels;
 using ModelsLibrary.DTOS;
+using ModelsLibrary.Helpers;
 
 namespace CoreAPI.Controllers
 {
@@ -32,12 +33,26 @@ namespace CoreAPI.Controllers
 
         // GET api/values
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery]UserParams userParams)
         {
-            var users = await _cosmosManager.GetUsers();
+            var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            var userFromRepo = await _cosmosManager.GetPersonById(currentUserId);
+
+            userParams.UserId = currentUserId;
+
+            if (string.IsNullOrEmpty(userParams.Gender))
+            {
+                userParams.Gender = userFromRepo.Gender == "male" ? "female" : "male";
+            }
+
+            var users = await _cosmosManager.GetUsers(userParams);
 
             // var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
             var usersToReturn = Helpers.HelperMapper.MapUserToUserForListDto(users);
+
+            // adding the pagination header information
+            Response.AddPagination(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);
 
             return Ok(usersToReturn) ;
         }

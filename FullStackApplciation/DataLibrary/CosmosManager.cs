@@ -3,6 +3,7 @@ using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Options;
 using ModelsLibrary;
 using ModelsLibrary.DataModels;
+using ModelsLibrary.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,22 +35,42 @@ namespace DataLibrary
         /// Get  All User Data
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<Person>> GetUsers()
+        public async Task<PagedList<Person>> GetUsers(UserParams userParams)
         {           
             //var query = "SELECT * FROM c";
             //var iterator = _container.GetItemQueryIterator<Person>(query);
             //var data = await iterator.ReadNextAsync();
             //return data;
 
-            var query = this._container.GetItemQueryIterator<Person>(new QueryDefinition("SELECT * FROM c"));
+            var query = this._container.GetItemQueryIterator<Person>(new QueryDefinition($"SELECT * FROM c WHERE c.id != '{userParams.UserId}' AND c.Gender = '{userParams.Gender}' "));
             List<Person> results = new List<Person>();
             while (query.HasMoreResults)
             {
                 var response = await query.ReadNextAsync();                
-                results.AddRange(response.ToList());
+                results.AddRange(response.OrderByDescending(u => u.LastActive).ToList());
+            }
+            var x = results;
+            if (userParams.MinAge != 18 || userParams.MaxAge != 99)
+            {
+                var minDob = DateTime.Today.AddYears(-userParams.MaxAge - 1);
+                var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
+
+                x = results.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob).ToList();               
             }
 
-            return results;
+            if (!string.IsNullOrEmpty(userParams.OrderBy))
+            {
+                switch (userParams.OrderBy)
+                {
+                    case "created":
+                        x = x.OrderByDescending(u => u.Created).ToList();
+                        break;
+                    default:
+                        x = x.OrderByDescending(u => u.LastActive).ToList();
+                        break;
+                }
+            }
+            return PagedList<Person>.Create(x.AsQueryable(), userParams.PageNumber, userParams.pageSize);            
         }
 
         /// <summary>
@@ -129,8 +150,16 @@ namespace DataLibrary
         /// <returns></returns>
         public async Task<bool> PersonExists(string username)
         {
-            var persons = await GetUsers();
-            foreach (var person in persons)
+            
+            var query = this._container.GetItemQueryIterator<Person>(new QueryDefinition("SELECT * FROM c"));
+            List<Person> results = new List<Person>();
+            while (query.HasMoreResults)
+            {
+                var response = await query.ReadNextAsync();
+                results.AddRange(response.ToList());
+            }
+            // var persons = await GetUsers(userParams);
+            foreach (var person in results)
             {
                 if (person.Username.Equals(username))
                 {
